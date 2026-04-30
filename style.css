@@ -1,0 +1,37 @@
+:root{
+    --angle: 45deg;
+--gradient: #000000, #0A0A2A, #1A1A3A, #2A2A4A, #3A3A5A;
+
+}
+
+
+body{
+    height: 100dvh;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: linear-gradient(var(--angle), var(--gradient));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+menu{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.options{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.options > button{
+    width: 150px;
+    height: 30px;
+    margin-top: 10px;
+}
