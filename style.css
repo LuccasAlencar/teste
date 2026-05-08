@@ -5,22 +5,36 @@
 }
 
 
-body{
+body {
     height: 100dvh;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background: linear-gradient(var(--angle), var(--gradient));
+    background-color: #43B7FD;
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative; 
 }
 
-menu{
-    display:flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+body::before {
+    content: '';
+    position: absolute;
+    inset: 0; 
+    background: url('assets/fundo-menu.png') no-repeat center/contain;
+    z-index: 0; 
+}
+
+
+.menu {
+    position: relative;
+    z-index: 1;
+}
+
+.logo{
+    width: 400px;
+    height: auto;
+    margin-bottom: 50px;
 }
 
 .options{
@@ -30,8 +44,103 @@ menu{
     align-items: center;
 }
 
-.options > button{
-    width: 150px;
-    height: 30px;
-    margin-top: 10px;
+.options button{
+    border: none;
+    width: 300px;
+    height: 70px;
+    color: transparent; /* esconde o texto mas mantém acessibilidade */
+    cursor: pointer;
+    margin: 10px 0;
+}
+
+
+.btn-imagem-iniciar {
+    background: url('assets/iniciar.png') no-repeat center/contain;
+}
+.btn-imagem-carregar {
+    background: url('assets/carregar.png') no-repeat center/contain;
+}
+.btn-imagem-opcoes {
+    background: url('assets/opcoes.png') no-repeat center/contain;
+}
+.btn-imagem-informacoes {
+    background: url('assets/informacoes.png') no-repeat center/contain;
+}
+
+.options button:hover {
+    filter: brightness(1.1); 
+    transform: scale(1.05);
+    transition: transform 0.2s ease;
+}
+
+
+
+
+
+
+
+.overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(77, 77, 77, 0.342);
+    backdrop-filter: blur(px);
+    z-index: 10;
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #1A1A3A;
+    border: 2px solid #4A4A8A;
+    border-radius: 12px;
+    padding: 30px;
+    z-index: 11;
+    color: white;
+    min-width: 300px;
+    text-align: center;
+}
+
+.popup h2 {
+    margin-top: 0;
+}
+
+.popup-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 15px 0;
+    gap: 20px;
+}
+
+.popup-item input[type="range"] {
+    width: 180px;
+    cursor: pointer;
+}
+
+.popup-item button, .btn-fechar {
+    cursor: pointer;
+    background: #2A2A5A;
+    color: white;
+    border: 1px solid #4A4A8A;
+    border-radius: 6px;
+    padding: 6px 12px;
+}
+
+.btn-fechar {
+    margin-top: 20px;
+    width: 100%;
+    padding: 10px;
+}
+
+.popup-item button:hover, .btn-fechar:hover {
+    background: #3A3A7A;
+}
+
+/* quando ativo */
+.overlay.ativo, .popup.ativo {
+    display: block;
 }
