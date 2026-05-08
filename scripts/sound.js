@@ -1,30 +1,32 @@
+// --- LÓGICA DO MENU DE SOM ---
 const musica = document.getElementById('musica');
-const overlay = document.getElementById('overlay');
-const popup = document.getElementById('popup-opcoes');
 const btnMute = document.getElementById('btn-mute');
 const sliderVolume = document.getElementById('volume');
-const btnFechar = document.getElementById('btn-fechar');
 const btnOpcoes = document.querySelector('.btn-imagem-opcoes');
+const popupOpcoes = document.getElementById('popup-opcoes');
+const btnFecharOpcoes = document.getElementById('btn-fechar-opcoes');
+const overlayParaOpcoes = document.getElementById('overlay'); 
+
+// Abre popup de Opções
+btnOpcoes.addEventListener('click', () => {
+    overlayParaOpcoes.classList.add('ativo');
+    popupOpcoes.classList.add('ativo');
+});
+
+// Função para fechar Opções
+function fecharPopupOpcoes() {
+    overlayParaOpcoes.classList.remove('ativo');
+    popupOpcoes.classList.remove('ativo');
+}
+
+// Fecha popup de Opções
+btnFecharOpcoes.addEventListener('click', fecharPopupOpcoes);
+overlayParaOpcoes.addEventListener('click', fecharPopupOpcoes);
 
 // inicia música no primeiro clique
 document.addEventListener('click', () => {
     if (musica.paused) musica.play();
 }, { once: true });
-
-// abre popup
-btnOpcoes.addEventListener('click', () => {
-    overlay.classList.add('ativo');
-    popup.classList.add('ativo');
-});
-
-// fecha popup
-btnFechar.addEventListener('click', fecharPopup);
-overlay.addEventListener('click', fecharPopup);
-
-function fecharPopup() {
-    overlay.classList.remove('ativo');
-    popup.classList.remove('ativo');
-}
 
 // volume
 sliderVolume.addEventListener('input', () => {

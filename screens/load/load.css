@@ -1,0 +1,95 @@
+body {
+    height: 100dvh;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #2E2129;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative; 
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    inset: 0; 
+    background: url('../../assets/teste-1.png') no-repeat center/contain;
+    z-index: 0; 
+}
+
+
+.btn-voltar {
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 20px;  
+    left: 20px;
+    border: none;
+    width: clamp(220px, 80%, 300px);
+    height: clamp(50px, 8vh, 70px);
+    color: transparent; 
+    cursor: pointer;
+    margin: clamp(5px, 2vh, 10px) 0;
+}
+
+.btn-voltar { background: url('../../assets/voltar.png') no-repeat center/contain; }
+
+.btn-voltar:hover {
+    filter: brightness(1.1); 
+    transform: scale(1.05);
+    transition: transform 0.2s ease;
+}
+
+/* Container que segura os quadrados */
+.menu-container {
+    display: flex;
+    flex-wrap: wrap;        
+    justify-content: center;  
+    gap: 20px;                
+    width: 1000px; 
+    z-index: 1;            
+}
+
+/* Estilo individual de cada quadrado */
+.square {
+    width: 265px;
+    height: 150px;
+    display: block;
+    text-decoration: none;
+    background-color: #2a88c2; 
+    background-size: cover;   
+    background-position: center; 
+    border-radius: 10px;       
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+/* Efeito ao passar o mouse (Hover) */
+.square:hover {
+    transform: scale(1.05);    
+    filter: brightness(0.6);  
+    cursor: pointer;
+}
+
+/* Imagens individuais de cada quadrado */
+.img-1 {
+    background: url('../../assets/fase-floresta.png') no-repeat center/contain;
+}
+
+.img-2 {
+    background: url('../../assets/fase-deserto.png') no-repeat center/contain;
+}
+
+.img-3 {
+    background: url('../../assets/fase-agua.png') no-repeat center/contain;
+}
+
+.img-4 {
+    background: url('../../assets/fase-castelo.png') no-repeat center/contain;
+}
+
+.img-5 {
+    background: url('../../assets/fase-lava.png') no-repeat center/contain;
+}

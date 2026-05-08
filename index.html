@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BlockJump</title>
+    <link rel="icon" href="assets/icon.png" type="image/png">
     <link rel="stylesheet" href="style.css">
 
 </head>
@@ -18,17 +19,19 @@
         <img src="assets/titulo.png" alt="Logo do jogo" class="logo">
         <div class="options">
             <button class="btn-imagem-iniciar">Iniciar</button>
-            <button class="btn-imagem-carregar">Carregar</button>
+            <button class="btn-imagem-carregar" onclick="window.location.href='screens/load/load.html'">Carregar</button>
             <button class="btn-imagem-opcoes">Opções</button>
-            <button class="btn-imagem-informacoes">Informações</button>
+            <button class="btn-imagem-info">Informações</button>
         </div>
     </div>
 
 
 
 
-    <!-- Popup de Opções -->
+    <!-- Apenas UM overlay para o jogo todo -->
     <div class="overlay" id="overlay"></div>
+
+    <!-- Popup de Opções -->
     <div class="popup" id="popup-opcoes">
         <h2>Opções</h2>
 
@@ -42,10 +45,19 @@
             <button id="btn-mute">🔊 Mutado: Não</button>
         </div>
 
-        <button class="btn-fechar" id="btn-fechar">Fechar</button>
+        <button class="btn-fechar" id="btn-fechar-opcoes">Fechar</button>
     </div>
 
+    <!-- Popup de Informações -->
+    <div class="popup" id="popup-info">
+        <h2>Informações</h2>
+        <button class="btn-fechar" id="btn-fechar-info">Fechar</button>
+    </div>
+
+
+
     <script src="scripts/sound.js"></script>
+    <script src="scripts/info.js"></script>
 
 </body>
 

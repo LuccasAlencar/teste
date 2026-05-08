@@ -1,9 +1,7 @@
-:root{
+:root {
     --angle: 45deg;
---gradient: #000000, #0A0A2A, #1A1A3A, #2A2A4A, #3A3A5A;
-
+    --gradient: #000000, #0A0A2A, #1A1A3A, #2A2A4A, #3A3A5A;
 }
-
 
 body {
     height: 100dvh;
@@ -21,51 +19,46 @@ body::before {
     content: '';
     position: absolute;
     inset: 0; 
-    background: url('assets/fundo-menu.png') no-repeat center/contain;
+    background: url('assets/fase-floresta.png') no-repeat center/contain;
     z-index: 0; 
 }
-
 
 .menu {
     position: relative;
     z-index: 1;
-}
-
-.logo{
-    width: 400px;
-    height: auto;
-    margin-bottom: 50px;
-}
-
-.options{
-    display:flex;
+    width: clamp(250px, 90vw, 500px); 
+    display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
 }
 
-.options button{
+.logo {
+    width: clamp(220px, 60vw, 280px);
+    height: auto;
+    margin-bottom: clamp(20px, 5vh, 50px);
+}
+
+.options {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.options button {
     border: none;
-    width: 300px;
-    height: 70px;
-    color: transparent; /* esconde o texto mas mantém acessibilidade */
+    width: clamp(250px, 80%, 300px);
+    height: clamp(70px, 8vh, 70px);
+    color: transparent; 
     cursor: pointer;
-    margin: 10px 0;
+    margin: clamp(5px, 2vh, 10px) 0;
 }
 
-
-.btn-imagem-iniciar {
-    background: url('assets/iniciar.png') no-repeat center/contain;
-}
-.btn-imagem-carregar {
-    background: url('assets/carregar.png') no-repeat center/contain;
-}
-.btn-imagem-opcoes {
-    background: url('assets/opcoes.png') no-repeat center/contain;
-}
-.btn-imagem-informacoes {
-    background: url('assets/informacoes.png') no-repeat center/contain;
-}
+.btn-imagem-iniciar { background: url('assets/iniciar.png') no-repeat center/contain; }
+.btn-imagem-carregar { background: url('assets/carregar.png') no-repeat center/contain; }
+.btn-imagem-opcoes { background: url('assets/opcoes.png') no-repeat center/contain; }
+.btn-imagem-info { background: url('assets/informacoes.png') no-repeat center/contain; }
 
 .options button:hover {
     filter: brightness(1.1); 
@@ -73,18 +66,12 @@ body::before {
     transition: transform 0.2s ease;
 }
 
-
-
-
-
-
-
 .overlay {
     display: none;
     position: fixed;
     inset: 0;
     background: rgba(77, 77, 77, 0.342);
-    backdrop-filter: blur(px);
+    backdrop-filter: blur(5px); 
     z-index: 10;
 }
 
@@ -97,11 +84,12 @@ body::before {
     background: #1A1A3A;
     border: 2px solid #4A4A8A;
     border-radius: 12px;
-    padding: 30px;
+    padding: clamp(15px, 4vw, 30px);
+    width: clamp(280px, 80vw, 400px); 
     z-index: 11;
     color: white;
-    min-width: 300px;
     text-align: center;
+    box-sizing: border-box; 
 }
 
 .popup h2 {
@@ -113,11 +101,11 @@ body::before {
     justify-content: space-between;
     align-items: center;
     margin: 15px 0;
-    gap: 20px;
+    gap: 10px;
 }
 
 .popup-item input[type="range"] {
-    width: 180px;
+    width: clamp(100px, 40vw, 180px);
     cursor: pointer;
 }
 
